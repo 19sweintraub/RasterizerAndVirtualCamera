@@ -1,0 +1,5 @@
+9/22/18: Worked with Omkar Savant on implementing triangulate. Discussed with Chris Kao about line segment intersection
+9/23/18: Discussed transformation procedure with TA Hannah Bollar
+9/24/18: Consulted Chris Kao's piazza post regarding converting screen space into texture map
+9/25/18: Help from TA katheryn regarding overwriting m_pos coordinates during coordinate transform
+9/26/18: Dicussed with Joe Auckely about missing pixels

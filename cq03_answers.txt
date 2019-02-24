@@ -1,0 +1,15 @@
+1.) Case 1: The intersection point lines outside of the triangle. If so, use the closest triangle edge point.
+Case 2: Slope of the triangle edge is 0. If so, ignore this edge.
+Case 3: Slope of the triangle edge is undefined. If so, use the X coordinate of either point.
+
+2.) The barycenter of a triangle forms 3 sub-triangles between the barycenter and the vertices of the triangle. If any of the sub-triangles have an area
+greater than the mian triangle, then the bary center is outside of the triangle. This method would be less efficient than row bound checking. For each pixel in the triangle, 
+you would need to calculate the areas of the 3 sub triangles to make a determination. With row bound, once the L and R bounds are detected, you only have to check to see if each
+pixels x coordinate is within the range for a given row. This is more efficient.
+
+3.) 
+
+Step 1: Convert World-Space coordinates to Camera-Space coordinates via the View-Matrix which is composed of the rotation and translation of the camera axis relative to the world coordinate system.
+Step 2: Convert Camera coordiantes to Unhomogenized Screen Space via Projection Matrix. The projection matrix scalex X,Y to [-1, 1] using the field of view. Z is scaled from 0 to 1 between clipping planes.
+Step 3: Convert Unhomogenized Screen Space Coordinates to Screen Space Coordiantes by dividing by W. This performs perspective divide.
+Step 4: Convert from screen space to Pixel Space by scaling the NDC to the corresponding screen's pixel location.
